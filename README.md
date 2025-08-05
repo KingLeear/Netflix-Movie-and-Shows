@@ -57,5 +57,31 @@ The analysis is guided by several core questions:
 - Even with limited variables, the dataset allows creative exploration and reframing of engagement dynamics.
 
 ---
+## Some findings(Descriptive Analysis)
+### 1. Overall Model Performance
+- The regression model is statistically significant, but explains only **~26–31% of the variance** in viewership (R² = 0.31, Adjusted R² = 0.27).  
+- The residual standard error is about **1 unit (on log(views))**, indicating moderate prediction accuracy.  
+- Roughly half of the original data was excluded due to missingness (12,828 valid observations out of 26,962).  
 
-## 📂 Structure
+👉 **Interpretation**: The model captures some meaningful patterns, but the majority of variation in viewing behavior remains unexplained, suggesting other factors are at play.
+
+---
+
+### 2. Release Month and Engagement
+Engagement was defined as:  
+
+\[
+\text{Engagement} = \frac{\text{hours\_viewed}}{\text{views}}
+\]
+
+This represents the **average hours watched per viewer**.
+
+- **Explanatory power is negligible**: R² = 0.0028. Month explains less than 1% of the variation in engagement.  
+- **Statistical significance vs. practical significance**: With a large sample, small differences across months become significant, but the effect size is extremely small.  
+- **Month-specific effects**:  
+  - June: +0.80 hours (p < 0.001)  
+  - August: +0.69 hours (p = 0.003)  
+  - July: +0.49 hours (p = 0.036)  
+  - December: +0.52 hours (p = 0.020)  
+
+👉 **Interpretation**: While June, August, July, and December releases show slightly higher engagement, the overall impact of release month is minimal. This pattern may reflect seasonal viewing habits (summer holidays, year-end breaks), but release timing is **not a major driver of engagement**.
